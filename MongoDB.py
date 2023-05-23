@@ -1,10 +1,13 @@
 from pymongo import MongoClient
 import pymongo
+import tensorflow
+from tensorflow import keras
 
-text = open("password.txt", "r").read()
+PASSWORD = open("password.txt", "r").read()
 
 # Connect to MongoDB
-client = pymongo.MongoClient(f"mongodb+srv://tejaskandri28:{text}@cluster0.0hszhf8.mongodb.net/")
+client = pymongo.MongoClient(
+    f"mongodb+srv://tejaskandri28:{PASSWORD}@cluster0.0hszhf8.mongodb.net/")
 
 # Get the database
 db = client["MovieDB"]
@@ -14,17 +17,17 @@ collection = db["Movies"]
 
 # Create a document
 movie = {
-    "title": "The Dark Knight",
-        "year": 2008,
-        "genre": "Action",
-        "rating": 9.0,
-        "director": "Christopher Nolan",
-        "actors": ["Christian Bale", "Heath Ledger"],
-        "user rating": 8.0
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": "Sci-Fi",
+    "rating": 8.6,
+    "director": "Christopher Nolan",
+    "actors": ["Matthew McConaughey", "Anne Hathaway"],
+    "user rating": 5
 }
 
 # Insert the document
 collection.insert_one(movie)
 
 # Print the results
-print(collection.find_one())
+print(collection.find)
