@@ -27,4 +27,5 @@ while(True):
 movie = ia.get_movie(ia.search_movie(movie_name)[index_of_movie].movieID)
 
 obj123 = Movie(movie["title"], movie["year"], movie["genres"], [str(movie["cast"][0]), str(movie["cast"][1])], movie["rating"], None)
+
 print(obj123.get_dictionary())
