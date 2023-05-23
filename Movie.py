@@ -1,14 +1,18 @@
-
 class Movie:
-    def __init__(self, title, year, genre, tomatoRating, actors):
+    def __init__(self, title, year, genre, actors, rating, user_rating):
         self.title = title
         self.year = year
         self.genre = genre
-        self.tomatoRating = tomatoRating
         self.actors = actors
+        self.rating = rating
+        self.user_rating = user_rating
     
     def get_dictionary(self):
         return {
         "name": self.title,
-        "year": self.year
+        "year": self.year,
+        "genre" : self.genre,
+        "actors" : self.actors,
+        "imdb rating" : self.rating,
+        "user ratinng" : self.user_rating
         }
