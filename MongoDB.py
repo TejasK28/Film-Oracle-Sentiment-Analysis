@@ -5,15 +5,22 @@ from tensorflow import keras
 
 PASSWORD = open("password.txt", "r").read()
 
-# Connect to MongoDB
-client = pymongo.MongoClient(
-    f"mongodb+srv://tejaskandri28:{PASSWORD}@cluster0.0hszhf8.mongodb.net/")
+def add_movie(dict_movie):
+    # Connect to MongoDB
+    client = pymongo.MongoClient(
+        f"mongodb+srv://tejaskandri28:{PASSWORD}@cluster0.0hszhf8.mongodb.net/")
 
-# Get the database
-db = client["MovieDB"]
+    # Get the database
+    db = client["MovieDB"]
 
-# Get the collection
-collection = db["Movies"]
+    # Get the collection
+    collection = db["Movies"]
+
+    # Insert the document
+    collection.insert_one(dict_movie)
+
+    # Print the results
+    print(collection.find)
 
 # Create a document
 movie = {
@@ -25,9 +32,3 @@ movie = {
     "actors": ["Matthew McConaughey", "Anne Hathaway"],
     "user rating": 5
 }
-
-# Insert the document
-collection.insert_one(movie)
-
-# Print the results
-print(collection.find)

@@ -14,5 +14,5 @@ class Movie:
         "genre" : self.genre,
         "actors" : self.actors,
         "imdb rating" : self.rating,
-        "user ratinng" : self.user_rating
+        "user rating" : self.user_rating
         }
