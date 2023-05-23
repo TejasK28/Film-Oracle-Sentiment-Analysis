@@ -1,29 +1,27 @@
 from pymongo import MongoClient
 import pymongo
+
 # Connect to MongoDB
-client = MongoClient('mongodb://localhost:27017/')
+client = pymongo.MongoClient("mongodb+srv://tejaskandri28:Kan29442@cluster0.0hszhf8.mongodb.net/")
 
-# Access the database
-db = client['movies_db']
+# Get the database
+db = client["MovieDB"]
 
-# Access the collection (or create it if it doesn't exist)
-collection = db['movies']
+# Get the collection
+collection = db["Movies"]
 
-# Movie details
+# Create a document
 movie = {
-    'title': 'The Shawshank Redemption',
-    'rating': 9.3
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genre": "Drama",
+    "rating": 9.3,
+    "director": "Frank Darabont",
+    "actors": ["Tim Robbins", "Morgan Freeman"]
 }
 
-# Insert the movie into the collection
-result = collection.insert_one(movie)
+# Insert the document
+collection.insert_one(movie)
 
-# Check if the insertion was successful
-if result.acknowledged:
-    print('Movie inserted successfully.')
-    print('Inserted movie ID:', result.inserted_id)
-else:
-    print('Failed to insert the movie.')
-
-# Close the MongoDB connection
-client.close()
+# Print the results
+print(collection.find_one())
