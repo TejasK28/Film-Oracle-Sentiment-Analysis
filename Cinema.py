@@ -1,5 +1,5 @@
-from imdb import Cinemagoer
 from Movie import Movie
+from imdb import Cinemagoer
 
 def get_movie():
     # create an instance of the Cinemagoer class
