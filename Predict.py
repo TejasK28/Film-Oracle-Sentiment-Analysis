@@ -1,5 +1,4 @@
 import pymongo
-import tensorflow as tf
 
 PASSWORD = open("password.txt", "r").read()
 

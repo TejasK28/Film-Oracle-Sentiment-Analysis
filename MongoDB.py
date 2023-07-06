@@ -1,7 +1,6 @@
 from pymongo import MongoClient
 import pymongo
-import tensorflow
-from tensorflow import keras
+
 
 PASSWORD = open("password.txt", "r").read()
 
