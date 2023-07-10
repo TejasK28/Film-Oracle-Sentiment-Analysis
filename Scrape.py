@@ -1,7 +1,6 @@
 import requests
 import json
 from bs4 import BeautifulSoup
-from requests_html import HTMLSession
 
 #Links
 ROTTON_TOMATOES_MOVIES = "https://www.rottentomatoes.com/m/"
