@@ -27,13 +27,8 @@ def get_movie():
 
     movie = ia.get_movie(ia.search_movie(movie_name)[index_of_movie].movieID)
    
-    print(movie["runtimes"], movie["original air date"])
-
     user_rating = float(input("What would you rate this?\n> "))
 
     movie_object = Movie(movie["title"], movie["year"], movie["genres"], [str(movie["cast"][0]), str(movie["cast"][1])], movie["rating"], user_rating)
-   
-    
-    print(movie_object.get_dictionary())
-    
+       
     return movie_object.get_dictionary()
