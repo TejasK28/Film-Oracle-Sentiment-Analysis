@@ -18,9 +18,7 @@ def add_movie(dict_movie):
     # Insert the document
     collection.insert_one(dict_movie)
 
-    # Print the results
-    print(collection.find)
-
+    
 def get_movies():
     # Connect to MongoDB
     client = pymongo.MongoClient(

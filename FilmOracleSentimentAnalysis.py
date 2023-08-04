@@ -14,8 +14,6 @@ def start():
         add_movie(get_movie())
     if(user_answer == 1):
         predict(float(input("What is the imdb score of the movie?\n> ")))
-    else: #Implement 
-        print("I didn't implement that yet :<")
 
 
 if __name__ == "__main__":
